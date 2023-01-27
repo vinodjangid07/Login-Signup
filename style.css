@@ -1,0 +1,324 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::selection {
+  background-color: gray;
+}
+
+*::-moz-selection {
+  background: gray;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+:root {
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  cursor: default;
+}
+.big-daddy-container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(218, 218, 218);
+  background-image: url(dddepth-322.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-signup-main-container {
+  width: 60%;
+  height: 500px;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+form{
+  width: 50%;
+  height: 110%;
+  background: #4b54a1; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#eea1d5,#9daaff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#eea1d5,#9daaff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  box-shadow: 10px 0px 30px rgba(0, 0, 0, 0.265);
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+#form2 {
+  display: none;
+}
+.formchange {
+  transform: translateX(100%);
+  transition-duration: 0.3s;
+  box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.265);
+}
+.changequestion {
+  transform: translateX(-100%);
+  transition-duration: 0.3s;
+}
+.heading {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 5rem;
+  color: white;
+  padding: 30px;
+}
+.heading2 {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 5rem;
+  color: white;
+  padding: 30px;
+}
+
+.inputfield-div {
+  display: flex;
+  width: 80%;
+  height: fit-content;
+  position: relative;
+}
+label {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  transition-duration: 0.3s;
+}
+
+.inputfield {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 10px;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+  border-top: 2px solid white;
+}
+
+#submit-btn {
+  width: 80%;
+  height: 40px;
+  background-color: white;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  position: relative;
+  transition-duration: 0.2s;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+label.active {
+  transform: translateY(-35px);
+  font-size: 1.5rem;
+  transition-duration: 0.3s;
+  color: rgb(230, 230, 230);
+}
+.eyetoggle {
+  position: absolute;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  right: 15px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#hide {
+  display: block;
+}
+#show {
+  display: none;
+}
+#show::selection,
+#hide::selection {
+  background-color: transparent;
+}
+
+#show::-moz-selection,
+#hide::-moz-selection {
+  background: transparent;
+}
+
+#submit-btn:hover {
+  color: white;
+  background-color: rgb(109, 131, 255);
+  transition-duration: 0.2s;
+}
+#submit-btn:hover::before {
+  transform: scaleY(1);
+  transition-duration: 0.3s;
+}
+#forgetpasword {
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  text-align: center;
+}
+.otherbox {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  transition-duration: 0.3s;
+  z-index: 1;
+  background-color: rgba(131, 182, 249, 0.251);
+  backdrop-filter: blur(20px);
+}
+.accountquestion {
+  width: 100%;
+  font-size: 2.5rem;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+}
+.otherbox-btn {
+  width: 120px;
+  height: 35px;
+  background-color: rgb(241, 174, 236);
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+}
+.otherbox-btn:hover {
+  background-color: rgb(237, 156, 126);
+}
+/* responsive code below*/
+@media screen and (max-width: 1920px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media screen and (max-width: 998px) {
+  html {
+    font-size: 55%;
+  }
+  .big-daddy-container{
+    height: fit-content;
+    background-size: cover;
+  }
+  .login-signup-main-container{
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 150px 0px;
+  }
+  .formchange {
+    transform: translateX(0%);
+    box-shadow:10px 0px 30px rgba(0, 0, 0, 0.265);
+  }
+  .changequestion {
+    transform: translateX(0%);
+    
+  }
+  form{
+    height: fit-content;
+    width: 60%;
+    padding: 40px 0px;
+  }
+  .heading{
+    height: 150px;
+  }
+  .otherbox{
+    height: fit-content;
+    width: 60%;
+    padding:40px 0px ;
+  }
+  
+}
+
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 45%;
+  }
+  form{
+    width: 90%;
+  }
+  .otherbox{
+    width: 90%;
+  }
+  
+}
+
+@media screen and (max-width: 430px) {
+  html {
+    font-size: 43%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media screen and (max-width: 300px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+/* responsive code above */

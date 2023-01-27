@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="theme-color" content="black">
+        <title>Login / Sign Up</title>
+        <link rel="icon" type="image/x-icon" href="faviconjpground.png">
+        <!-- aos cdn -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="style.css">
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    
+    </head>
+<body>
+    <div class="big-daddy-container">
+        <div class="login-signup-main-container">
+            
+                <form action="">
+                    <article class="heading">LOGIN</article>
+                <div class="inputfield-div">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="inputfield">
+                </div>
+                <div class="inputfield-div">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="inputfield">
+                    <div id="eyetoggle" class="eyetoggle">
+                        <i class="fas fa-eye" id="show"></i>
+                        <i class="fas fa-eye-slash" id="hide"></i>
+                    </div>
+                </div>
+                    
+                    <button type="submit" id="submit-btn">Login </button>
+
+                    <a href="#" id="forgetpasword">Forget Password?</a>
+                </form>
+                <div class="otherbox">
+                <p class="accountquestion">Don't have an Account?</p>
+                <button class="otherbox-btn" id="otherbox-btn" onclick="modechange()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+// for input label active
+    let labels = document.querySelectorAll('.label');
+    let inputs = document.querySelectorAll('.inputfield');
+
+
+    inputs.forEach((input) =>{
+    input.addEventListener("focus",() =>{
+        input.previousElementSibling.classList.add('active');
+    });
+    input.addEventListener("blur",() =>{
+        if (input.value === "") {
+            input.previousElementSibling.classList.remove('active');
+        }
+        else{
+            input.previousElementSibling.classList.add('active');
+        }
+    });
+})
+
+// for eye toggle
+let passwordfield = document.getElementById('password');
+    let eyeBtn = document.getElementById("eyetoggle");
+    let hide = document.getElementById("hide");
+    let show = document.getElementById("show");
+    
+     eyeBtn.addEventListener('click',passwordSee);
+     function passwordSee(g){
+        if (passwordfield.type === "password"){
+        passwordfield.type = "text";
+        show.style.display = "block";
+        hide.style.display = "none";
+    }
+    else{
+        passwordfield.type = "password";
+        show.style.display = "none";
+        hide.style.display = "block";
+    }
+    }
+
+
+
+    
+    // for other box
+    let otherboxBtn = document.getElementById("otherbox-btn");
+
+// otherboxBtn.addEventListener('click', modechange);
+
+let form = document.querySelector('form');
+function modechange(){
+    form.classList.toggle('formchange');
+    document.querySelector('.otherbox').classList.toggle('changequestion');
+    if (document.querySelector('article').textContent === "SIGNUP") {
+        form.innerHTML = `<article class="heading">LOGIN</article>
+                <div class="inputfield-div">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="inputfield">
+                </div>
+                <div class="inputfield-div">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="inputfield">
+                    <div id="eyetoggle" class="eyetoggle">
+                        <i class="fas fa-eye" id="show"></i>
+                        <i class="fas fa-eye-slash" id="hide"></i>
+                    </div>
+                </div>
+                    
+                    <button type="submit" id="submit-btn">Login </button>
+
+                    <a href="#" id="forgetpasword">Forget Password?</a>`
+                    document.querySelector('.otherbox').innerHTML = `<p class="accountquestion">Don't have an Account?</p>
+                <button class="otherbox-btn" id="otherbox-btn" onclick="modechange()">Sign Up</button>`
+                                 
+                    
+    let labels = document.querySelectorAll('.label');
+    let inputs = document.querySelectorAll('.inputfield');
+           
+    
+    inputs.forEach((input) =>{
+    input.addEventListener("focus",() =>{
+        input.previousElementSibling.classList.add('active');
+    });
+    input.addEventListener("blur",() =>{
+        if (input.value === "") {
+            input.previousElementSibling.classList.remove('active');
+        }
+        else{
+            input.previousElementSibling.classList.add('active');
+        }
+    });
+})
+let passwordfield = document.getElementById('password');
+    let eyeBtn = document.getElementById("eyetoggle");
+    let hide = document.getElementById("hide");
+    let show = document.getElementById("show");
+    
+     eyeBtn.addEventListener('click',passwordSee);
+     function passwordSee(g){
+        if (passwordfield.type === "password"){
+        passwordfield.type = "text";
+        show.style.display = "block";
+        hide.style.display = "none";
+    }
+    else{
+        passwordfield.type = "password";
+        show.style.display = "none";
+        hide.style.display = "block";
+    }
+    }
+    }
+
+
+ else {
+        
+        form.innerHTML = ` <article class="heading2">SIGNUP</article>
+                <div class="inputfield-div">
+                    <label for="username" class="label">Username</label>
+                    <input type="text" name="username" id="username" class="inputfield">
+                </div>
+                <div class="inputfield-div">
+                    <label for="password1" class="label">Password</label>
+                    <input type="password" name="password" id="password1" class="inputfield">
+                </div>
+
+                <div class="inputfield-div">
+                    <label for="password2" class="label">Confirm Password</label>
+                    <input type="password" name="password" id="password2" class="inputfield">
+                    <div id="eyetoggle" class="eyetoggle">
+                        <i class="fas fa-eye" id="show"></i>
+                        <i class="fas fa-eye-slash" id="hide"></i>
+                    </div>
+                </div>
+                    
+                    <button type="submit" id="submit-btn">Sign Up</button>`
+        document.querySelector('.otherbox').innerHTML = `<p class="accountquestion">Already have an Account?</p>
+                <button class="otherbox-btn" id="otherbox-btn" onclick="modechange()">Login</button>`
+                
+    let labels = document.querySelectorAll('.label');
+    let inputs = document.querySelectorAll('.inputfield');
+           
+    
+    inputs.forEach((input) =>{
+    input.addEventListener("focus",() =>{
+        input.previousElementSibling.classList.add('active');
+    });
+    input.addEventListener("blur",() =>{
+        if (input.value === "") {
+            input.previousElementSibling.classList.remove('active');
+        }
+        else{
+            input.previousElementSibling.classList.add('active');
+        }
+    });
+})
+let passwordfield = document.getElementById('password2');
+    let eyeBtn = document.getElementById("eyetoggle");
+    let hide = document.getElementById("hide");
+    let show = document.getElementById("show");
+    
+     eyeBtn.addEventListener('click',passwordSee);
+     function passwordSee(g){
+        if (passwordfield.type === "password"){
+        passwordfield.type = "text";
+        show.style.display = "block";
+        hide.style.display = "none";
+    }
+    else{
+        passwordfield.type = "password";
+        show.style.display = "none";
+        hide.style.display = "block";
+    }
+    }
+}
+    
+}
+
+    
+</script>
+</html>
